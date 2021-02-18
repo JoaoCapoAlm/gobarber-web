@@ -48,12 +48,10 @@ const ForgotPassword: React.FC = () => {
 
         addToast({
           type: 'success',
-          title: 'E-mail de recuperação de senha enviado',
+          title: 'Recuperação de senha',
           description:
             'Enviamos um e-mail para confirmar a recuperação de senha.',
         });
-
-        // history.push('/dashboard');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -62,7 +60,7 @@ const ForgotPassword: React.FC = () => {
 
         addToast({
           type: 'error',
-          title: 'Erro na recuperação de senha.',
+          title: 'Recuperação de senha.',
           description: 'Ocorreu um erro ao recuperar a senha, tente novamente.',
         });
       } finally {
