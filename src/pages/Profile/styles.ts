@@ -9,7 +9,7 @@ export const Container = styled.div`
     align-items: center;
     div {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1150px;
       margin: 0 auto;
       svg {
         color: #999591;

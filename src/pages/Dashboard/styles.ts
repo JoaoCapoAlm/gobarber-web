@@ -9,10 +9,12 @@ export const Container = styled.div``;
 export const Header = styled.header`
   padding: 32px 0;
   background: #28262e;
+  width: 100%;
+  margin-bottom: 50px;
 `;
 
 export const HeaderContent = styled.div`
-  max-width: 1120px;
+  max-width: 1150px;
   margin: 0 auto;
   display: flex;
   align-self: center;
@@ -30,6 +32,18 @@ export const HeaderContent = styled.div`
       color: #999591;
       width: 20px;
       height: 20px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    > button {
+      margin: auto;
     }
   }
 `;
@@ -64,12 +78,27 @@ export const Profile = styled.div`
       }
     }
   }
+
+  @media (max-width: 800px) {
+    margin: 20px auto;
+  }
 `;
 
 export const Content = styled.main`
-  max-width: 1120px;
+  max-width: 1150px;
   margin: 64px auto;
   display: flex;
+
+  @media (max-width: 1200px) {
+    margin: 0 30px;
+  }
+
+  @media (max-width: 860px) {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    margin: auto;
+  }
 `;
 
 export const Schedule = styled.div`
@@ -99,6 +128,12 @@ export const Schedule = styled.div`
       background-color: #ff9000;
       margin: 0 8px;
     }
+  }
+
+  @media (max-width: 860px) {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
   }
 `;
 
@@ -211,6 +246,12 @@ export const Appointment = styled.div`
       font-weight: 500;
     }
   }
+
+  @media (max-width: 800px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Calendar = styled.aside`
@@ -313,5 +354,10 @@ export const Calendar = styled.aside`
       .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
       background: ${shade(0.2, '#3e3b47')};
     }
+  }
+
+  @media (max-width: 860px) {
+    max-width: 90vw;
+    margin: 30px auto 20px;
   }
 `;
