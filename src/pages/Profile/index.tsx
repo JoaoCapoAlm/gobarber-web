@@ -43,17 +43,17 @@ const Profile: React.FC = () => {
             .required('E-mail obrigatório')
             .email('Digite um e-mail válido'),
           old_password: Yup.string(),
-          password: Yup.string().when('old_password', {
-            is: val => !!val.length,
-            then: Yup.string().required('Campo obrigatório'),
-            otherwise: Yup.string(),
-          }),
+          password: Yup.string().when('old_password', (val: string) =>
+            val.length
+              ? Yup.string().required('Campo obrigatório')
+              : Yup.string(),
+          ),
           password_confirmation: Yup.string()
-            .when('old_password', {
-              is: val => !!val.length,
-              then: Yup.string().required('Campo obrigatório'),
-              otherwise: Yup.string(),
-            })
+            .when('old_password', (val: string) =>
+              val.length
+                ? Yup.string().required('Campo obrigatório')
+                : Yup.string(),
+            )
             .oneOf([Yup.ref('password')], 'Confirmação incorreta'),
         });
 
